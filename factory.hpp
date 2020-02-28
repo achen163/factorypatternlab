@@ -1,6 +1,12 @@
 #ifndef __FACTORY_HPP__
 #define __FACTORY_HPP__
 #include "base.hpp"
+#include "add.hpp"
+#include "sub.hpp"
+#include "mult.hpp"
+#include "div.hpp"
+#include "pow.hpp"
+#include "op.hpp"
 #include <boost/tokenizer.hpp>
 #include <iostream>
 #include <vector>
@@ -11,17 +17,15 @@
 #include <stdlib.h>
 using namespace std; 
 
-class Factory : public Base {
+class Factory {
 	public:
+		Factory() {};
 		Base* createAdd(Base*, Base*);
 		Base* createSub(Base*, Base*);
 		Base* createMult(Base*, Base*);
 		Base* createDiv(Base*, Base*);
-		
-		Base* parse(string);
-		void execute(Base*);
-	private:
-		Base* root;
-		Base* left;
+		Base* createPow(Base*, Base*);
+		Base* parser(int, char**);
+
 };
 #endif
