@@ -27,7 +27,7 @@ Base*  Factory::createPow(Base* left, Base* right) {
 
 
 Base* Factory::parser(int argc, char** argv) {
-	if(argc <= 1) {
+	if(argc <= 2) {
 		cerr << "Error. Invalid input." << endl;
 		return nullptr;
 	}
